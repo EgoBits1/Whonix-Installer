@@ -118,8 +118,6 @@ SectionEnd
 Section "Remove temporary files"
 	delete $INSTDIR\gateway.7z
 	delete $INSTDIR\workstation.7z
-	delete $INSTDIR\whonix_gateway.ova
-	delete $INSTDIR\whonix_workstation.ova
 	delete $INSTDIR\7za.exe
 SectionEnd
 
@@ -161,6 +159,8 @@ section "uninstall"
 	delete $INSTDIR\common.cab
 	delete $INSTDIR\virtualbox_x86.msi
 	delete $INSTDIR\virtualbox_x64.msi
+	delete $INSTDIR\whonix_gateway.ova
+	delete $INSTDIR\whonix_workstation.ova
 	delete $INSTDIR\uninstall.exe
  
 	rmDir $INSTDIR

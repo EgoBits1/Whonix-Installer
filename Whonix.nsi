@@ -59,8 +59,6 @@ section "install"
 	File "VBoxManage.exe"
 	File "gateway.7z"
 	File "workstation.7z"
-	File "MahApps.Metro.dll"
-	File "System.Windows.Interactivity.dll"
 	
 	writeUninstaller "$INSTDIR\uninstall.exe"
  
@@ -160,8 +158,6 @@ section "uninstall"
  
 	# Remove files
 	delete $INSTDIR\Whonix.exe
-	delete $INSTDIR\MahApps.Metro.dll
-	delete $INSTDIR\System.Windows.Interactivity.dll
 	delete $INSTDIR\common.cab
 	delete $INSTDIR\virtualbox_x86.msi
 	delete $INSTDIR\virtualbox_x64.msi

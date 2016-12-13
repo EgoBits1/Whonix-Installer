@@ -95,30 +95,32 @@ SectionEnd
 
 Section "VirtualBox"
 ${If} ${RunningX64}
-	nsExec::Exec '"msiexec" /i "$INSTDIR\virtualbox_x64.msi" INSTALLDIR="$INSTDIR" /quiet'
+	nsExec::ExecToLog '"msiexec" /i "$INSTDIR\virtualbox_x64.msi" INSTALLDIR="$INSTDIR" /quiet'
 ${Else}
-	nsExec::Exec '"msiexec" /i "$INSTDIR\virtualbox_x86.msi" INSTALLDIR="$INSTDIR" /quiet'
+	nsExec::ExecToLog '"msiexec" /i "$INSTDIR\virtualbox_x86.msi" INSTALLDIR="$INSTDIR" /quiet'
 ${EndIf}
 SectionEnd
 
 Section "Extract"
-	nsExec::Exec '"$INSTDIR\7za.exe" x gateway.7z'
-	nsExec::Exec '"$INSTDIR\7za.exe" x workstation.7z'
+	nsExec::ExecToLog '"$INSTDIR\7za.exe" x gateway.7z'
+	nsExec::ExecToLog '"$INSTDIR\7za.exe" x workstation.7z'
 SectionEnd
 
 
 Section "Import Gateway"
-	nsExec::Exec '"$INSTDIR\VBoxManage" import whonix_gateway.ova --vsys 0 --eula accept'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage" import whonix_gateway.ova --vsys 0 --eula accept'
 SectionEnd
 
 Section "Import Workstation"
-	nsExec::Exec '"$INSTDIR\VBoxManage" import whonix_workstation.ova --vsys 0 --eula accept'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage" import whonix_workstation.ova --vsys 0 --eula accept'
 SectionEnd
 
 Section "Remove temporary files"
 	delete $INSTDIR\gateway.7z
 	delete $INSTDIR\workstation.7z
 	delete $INSTDIR\7za.exe
+	delete $INSTDIR\whonix_gateway.ova
+	delete $INSTDIR\whonix_workstation.ova
 SectionEnd
 
 # Uninstaller
@@ -144,14 +146,14 @@ section "uninstall"
 	delete "$DESKTOP\${APPNAME}.lnk"
 	
 	#Remove virtual drives
-	nsExec::Exec '"$INSTDIR\VBoxManage" unregistervm Whonix-Gateway --delete'
-	nsExec::Exec '"$INSTDIR\VBoxManage" unregistervm Whonix-Workstation --delete'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage" unregistervm Whonix-Gateway --delete'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage" unregistervm Whonix-Workstation --delete'
 	
 	#Remove VirtualBox
 	${If} ${RunningX64}
-	nsExec::Exec '"msiexec" /x "$INSTDIR\virtualbox_x64.msi" /quiet'
+	nsExec::ExecToLog '"msiexec" /x "$INSTDIR\virtualbox_x64.msi" /quiet'
 	${Else}
-	nsExec::Exec '"msiexec" /x "$INSTDIR\virtualbox_x86.msi" /quiet'
+	nsExec::ExecToLog '"msiexec" /x "$INSTDIR\virtualbox_x86.msi" /quiet'
 	${EndIf}
  
 	# Remove files
@@ -159,8 +161,6 @@ section "uninstall"
 	delete $INSTDIR\common.cab
 	delete $INSTDIR\virtualbox_x86.msi
 	delete $INSTDIR\virtualbox_x64.msi
-	delete $INSTDIR\whonix_gateway.ova
-	delete $INSTDIR\whonix_workstation.ova
 	delete $INSTDIR\uninstall.exe
  
 	rmDir $INSTDIR

@@ -56,7 +56,6 @@ section "install"
 	File "virtualbox_x64.msi"
 	File "virtualbox_x86.msi"
 	File "common.cab"
-	File "VBoxManage.exe"
 	File "gateway.7z"
 	File "workstation.7z"
 	

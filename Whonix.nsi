@@ -107,11 +107,11 @@ SectionEnd
 
 
 Section "Import Gateway"
-	nsExec::ExecToLog '"$INSTDIR\VBoxManage" import whonix_gateway.ova --vsys 0 --eula accept'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage.exe" import whonix_gateway.ova --vsys 0 --eula accept'
 SectionEnd
 
 Section "Import Workstation"
-	nsExec::ExecToLog '"$INSTDIR\VBoxManage" import whonix_workstation.ova --vsys 0 --eula accept'
+	nsExec::ExecToLog '"$INSTDIR\VBoxManage.exe" import whonix_workstation.ova --vsys 0 --eula accept'
 SectionEnd
 
 Section "Remove temporary files"

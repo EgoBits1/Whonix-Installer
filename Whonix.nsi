@@ -104,7 +104,11 @@ Section "Extract"
 	nsExec::ExecToLog '"$INSTDIR\7za.exe" x gateway.7z'
 	nsExec::ExecToLog '"$INSTDIR\7za.exe" x workstation.7z'
 SectionEnd
-
+	
+Section "Remove compressed images"
+	delete $INSTDIR\gateway.7z
+	delete $INSTDIR\workstation.7z
+SectionEnd
 
 Section "Import Gateway"
 	nsExec::ExecToLog '"$INSTDIR\VBoxManage.exe" import whonix_gateway.ova --vsys 0 --eula accept'
@@ -115,8 +119,6 @@ Section "Import Workstation"
 SectionEnd
 
 Section "Remove temporary files"
-	delete $INSTDIR\gateway.7z
-	delete $INSTDIR\workstation.7z
 	delete $INSTDIR\7za.exe
 	delete $INSTDIR\whonix_gateway.ova
 	delete $INSTDIR\whonix_workstation.ova

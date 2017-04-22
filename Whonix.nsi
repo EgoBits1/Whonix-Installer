@@ -53,6 +53,7 @@ section "install"
 	
 	File "Whonix.exe"
 	File "7za.exe"
+	File "srep.exe"
 	File "virtualbox_x64.msi"
 	File "virtualbox_x86.msi"
 	File "common.cab"

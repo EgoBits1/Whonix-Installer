@@ -100,13 +100,11 @@ ${EndIf}
 SectionEnd
 
 Section "Extract"
-	nsExec::ExecToLog '"$INSTDIR\7za.exe" x gateway.7z'
-	nsExec::ExecToLog '"$INSTDIR\7za.exe" x workstation.7z'
+	nsExec::ExecToLog '"$INSTDIR\7za.exe" x whonix.xz -so | srep -d -hash- - - | pzlib d - -o - | 7za x -ttar -si'
 SectionEnd
 	
 Section "Remove compressed images"
-	delete $INSTDIR\gateway.7z
-	delete $INSTDIR\workstation.7z
+	delete $INSTDIR\whonix.xz
 SectionEnd
 
 Section "Import Gateway"

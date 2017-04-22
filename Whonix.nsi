@@ -56,8 +56,7 @@ section "install"
 	File "virtualbox_x64.msi"
 	File "virtualbox_x86.msi"
 	File "common.cab"
-	File "gateway.7z"
-	File "workstation.7z"
+	File "whonix.xz"
 	
 	writeUninstaller "$INSTDIR\uninstall.exe"
  

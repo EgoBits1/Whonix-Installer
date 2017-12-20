@@ -6,7 +6,7 @@ The Whonix-Installer for Windows is a simple and fast way to set-up Whonix on a 
 
 * A Windows-Machine on which to do this with at least 16GB of free disk space
 ** Due to the fact that a big part of the build-process requires the temp folder, the space is required on the drive to which your temp folder is set
-* The Whonix-Gateway and Whonix-Workstation Images for VirtualBox found here: [[VirtualBox]]
+* The Whonix-Gateway and Whonix-Workstation Images for VirtualBox found here: https://www.whonix.org/wiki/VirtualBox
 * The newest build of the VirtualBox-Installer found here under "Windows hosts": https://www.virtualbox.org/wiki/Downloads?replytocom=98578
 * The command line based compressor 7za.exe found here under 7-Zip Extra (needs to be extracted): http://www.7-zip.com/download.html
 * NSISBI, which will be used to create the installer, found here (needs to be extracted): https://sourceforge.net/projects/nsisbi/

@@ -1,3 +1,7 @@
+= Notice =
+
+This version of the installer is deprecated and unsupported. For the current version, please visit: https://github.com/EgoBits1/Whonix-Windows-Installer
+
 = Introduction =
 
 The Whonix-Installer for Windows is a simple and fast way to set-up Whonix on a system running Microsoft Windows. The following instructions will tell you how to build the Whonix-Installer for Windows using the source code provided via Github, as well as base Whonix and VirtualBox files.
@@ -11,8 +15,8 @@ The Whonix-Installer for Windows is a simple and fast way to set-up Whonix on a 
 * The command line based compressor 7za.exe found here under 7-Zip Extra (needs to be extracted): http://www.7-zip.com/download.html
 * NSISBI, which will be used to create the installer, found here (needs to be extracted): https://sourceforge.net/projects/nsisbi/
 * Whonix-UI, which can be obtained from here: https://github.com/EgoBits1/Whonix-Windows-UI/releases
-** OR built from source as well via this guide: [[Building Whonix-UI for Windows]]
-* The Source for the installer, the logo and license text, found here: https://github.com/EgoBits1/Whonix-Windows-Installer
+** OR built from source as well via this guide: https://mail.whonix.org/wiki/Building_Whonix-UI_for_Windows
+* The Source for the installer, the logo and license text, found here: https://github.com/EgoBits1/Whonix-Windows-Installer-deprecated
 
 = Preparing the files =
 
